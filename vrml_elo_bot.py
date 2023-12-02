@@ -16,7 +16,7 @@ intents = discord.Intents.default()
 intents.message_content = True  # Add more if needed
 
 # Create a bot instance with a command prefix
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 
 @bot.event
@@ -27,21 +27,49 @@ async def on_ready():
 async def test(ctx):   
         await ctx.channel.send("Did you win or lose? Type `!won` or `!lost` then type in your team and opponent team.")
 
-@bot.command(name='won')
-async def win(ctx):
+@bot.command(name='test')
+async def score_submit(ctx):
      if ctx.channel.id == 1180168660778745978:
         await ctx.send("Updating Elo...")
         
         root = tk.Tk()
         root.withdraw()
-    
-        team_home = simpledialog.askstring("Input", "Enter home team:")
-        team_away = simpledialog.askstring("Input", "Enter away team:")
+        
+        #try:
+                #team_home = simpledialog.askstring("Input", "Enter home team:")
         try:
-                won = int(simpledialog.askstring("Input", "Enter game outcome: 1 for win, 0 for loss"))
-        except:
-                simpledialog.askstring("use 1 for win and zero for a loss")
+            team_home = simpledialog.askstring("Input", "Enter home team:")
+            rating_home = team_ratings[team_home]
+            
+        except KeyError:
+            await ctx.send(f"Team '{team_home}' not found in team data base.")
+            return
+        
+        try:
+            team_away = simpledialog.askstring("Input", "Enter away team:")
+            rating_away = team_ratings[team_away]
+        
+        except KeyError:
+            await ctx.send(f"Team '{team_away}' not found in team data base.")
+            return
+    
+        try:
+            scores_input = simpledialog.askstring("Input", "Enter game scores (separated by comma):")
+            score_home, score_away = map(int, scores_input.split(','))
+            
+        except ValueError:
+            await ctx.send("Invalid input. Please enter scores in the format 'home,away'.")
+            return
+    
+        if score_home > score_away:
+            won = 1
+            
+        elif score_home < score_away:
+            won = 0
 
+        else:
+            won = .5
+            
         rating_home = team_ratings[team_home]
         rating_away = team_ratings[team_away]
         
@@ -61,6 +89,7 @@ async def win(ctx):
 
         print(f"New Rating for teams: {new_rating_teams}")
         
-        await ctx.send(f"New Rating for teams: {new_rating_teams}")  
+        await ctx.send(f"New Rating for teams: {new_rating_teams}")
+     
         
-bot.run('bot token')
+bot.run('MTE4MDE2MjgwNzk3MTQ0Njc5NQ.GvAdWt.F-X-khpnTbW_I2WVvrWem4rXuNLU7Wl7TtUstg')
