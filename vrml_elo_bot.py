@@ -92,4 +92,4 @@ async def score_submit(ctx):
         await ctx.send(f"New Rating for teams: {new_rating_teams}")
      
         
-bot.run('MTE4MDE2MjgwNzk3MTQ0Njc5NQ.GvAdWt.F-X-khpnTbW_I2WVvrWem4rXuNLU7Wl7TtUstg')
+bot.run('BOT TOKEN')
