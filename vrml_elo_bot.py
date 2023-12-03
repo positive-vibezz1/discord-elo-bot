@@ -26,7 +26,7 @@ async def on_ready():
 
 @bot.command(name='test')
 async def score_submit(ctx):
-    if ctx.channel.id == 1180168660778745978:
+    if ctx.channel.id == your channel id:
         await ctx.send("Updating Elo...")
         
         root = tk.Tk()
@@ -91,7 +91,7 @@ async def score_submit(ctx):
      
 @bot.command(name='register_team')
 async def team_registration(ctx):
-    if ctx.channel.id == 1180168660778745978:
+    if ctx.channel.id == your channel id:
         guild = ctx.guild        
         await ctx.send("Adding team to data base...")
         
