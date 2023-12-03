@@ -10,7 +10,7 @@ from tkinter import simpledialog
 conn = sqlite3.connect('elo_ratings.db')
 cursor = conn.cursor()
 
-team_ratings = {'Silly_Willy': 800, 'Lunch_Room_Bandits': 600}
+team_ratings = {'test1': 600, 'test2': 600}
 # Intents determine what events your bot will receive information about
 intents = discord.Intents.default()
 intents.message_content = True  # Add more if needed
@@ -21,15 +21,12 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name}')  
-
-@bot.command(name='game-report')
-async def test(ctx):   
-        await ctx.channel.send("Did you win or lose? Type `!won` or `!lost` then type in your team and opponent team.")
+    print(f'Logged in as {bot.user.name}')
+      
 
 @bot.command(name='test')
 async def score_submit(ctx):
-     if ctx.channel.id == 1180168660778745978:
+    if ctx.channel.id == 1180168660778745978:
         await ctx.send("Updating Elo...")
         
         root = tk.Tk()
@@ -89,7 +86,54 @@ async def score_submit(ctx):
 
         print(f"New Rating for teams: {new_rating_teams}")
         
-        await ctx.send(f"New Rating for teams: {new_rating_teams}")
+        await ctx.send(f"New Rating for { team_home}: {new_rating_teams[0]}")
+        await ctx.send(f"New Rating for { team_away}: {new_rating_teams[1]}")
      
+@bot.command(name='register_team')
+async def team_registration(ctx):
+    if ctx.channel.id == 1180168660778745978:
+        guild = ctx.guild        
+        await ctx.send("Adding team to data base...")
         
-bot.run('BOT TOKEN')
+        root = tk.Tk()
+        root.withdraw()
+        initial_rating = 600
+        
+        try:
+            team_name = simpledialog.askstring("Input", "Enter team name:")
+            
+            team_ratings[team_name] = initial_rating
+            
+            await ctx.send(f"Team '{team_name}' has been successfully registered to the EAML, and roles have been given.")
+            
+        except ValueError:
+            await ctx.send("Invalid input. Please enter a valid team name and initial rating.")
+            
+        try:
+            players = simpledialog.askstring("Input", "Enter yours players discord id (separated by comma):")
+            player_ID = list(map(int, players.split(',')))
+            
+        except ValueError:
+            await ctx.send("Invalid input. Please enter scores in the format 'home,away'.")
+            return
+
+        existing_role = discord.utils.get(guild.roles, name=team_name)
+        
+        if existing_role:
+            await ctx.send(f"Role '{team_name}' already exists.")
+            return
+
+        
+        for player_id in player_ID:
+            player = guild.get_member(player_id)
+            if player:
+               await player.add_roles(new_role)
+            else:
+                await ctx.send(f"Player with ID {player_ID} not found.")
+                
+        # Create the role
+        new_role = await guild.create_role(name=team_name)
+        await ctx.author.add_roles(new_role)     
+        
+          
+bot.run('MTE4MDE2MjgwNzk3MTQ0Njc5NQ.G37B7z.QOYaJiRjXTzkdVV5U5eMp1QGMrkV9rYHLy0BWI')
