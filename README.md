@@ -14,6 +14,8 @@ then open the main file which is vrml_elo_bot, and replace
 with your bots token which can be found here
 ![Screenshot (155)](https://github.com/positive-vibezz1/discord-elo-bot/assets/134086715/7f3720f1-8c0a-4c05-871c-93de17ffae0f)
 
+---
+
 then replace all the ***ranking_and_teams_channel = "replace with your desgnated channel"*** with the channel you want the bot to see the commands and replay to them.
 there should be three variables you have to replace
 -vrml_elo_bot; which is at line 35
