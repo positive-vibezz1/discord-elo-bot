@@ -18,6 +18,6 @@ with your bots token which can be found here
 
 then replace all the ***ranking_and_teams_channel = "replace with your desgnated channel"*** with the channel you want the bot to see the commands and replay to them.
 there should be three variables you have to replace
--vrml_elo_bot; which is at line 35 
--create_team; which is at line 12 
-ranking_class; which is at line 17 
+- vrml_elo_bot; which is at line 35 
+- create_team; which is at line 12 
+- ranking_class; which is at line 17 
