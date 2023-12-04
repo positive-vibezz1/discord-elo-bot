@@ -12,7 +12,7 @@ to run the bot download the zip, create a bot here [discord developer portal](ht
 then open the main file which is vrml_elo_bot, and replace 
 ***bot.run('BOT TOKEN')***
 with your bots token which can be found here
----
+
 ![Screenshot (155)](https://github.com/positive-vibezz1/discord-elo-bot/assets/134086715/7f3720f1-8c0a-4c05-871c-93de17ffae0f)
 ---
 
