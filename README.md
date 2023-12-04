@@ -9,7 +9,6 @@ the commands are
 - register_sub: this is supposed to rigster a player into the database as a sub and give the sub role, idk if it works because it doesnt give the role, but it look like its adding users into the player base just fine 
 
 to run the bot download the zip, create a bot here [discord developer portal](https://discord.com/developers/applications/) and create your bot.
-then open the main file which is
-
-
+then open the main file which is vrml_elo_bot, and replace bot.run('BOT TOKEN') with your bots token which can be found here
+![Screenshot (155)](https://github.com/positive-vibezz1/discord-elo-bot/assets/134086715/7f3720f1-8c0a-4c05-871c-93de17ffae0f)
 
