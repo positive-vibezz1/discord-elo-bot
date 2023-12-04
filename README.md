@@ -24,4 +24,4 @@ there should be three variables you have to replace
 
 ---
 ## About the `register_sub and substitute files` 
-they shouldnt be to hard to fix for the ppl that know how, the only problem is im a novice coder, and this bot just kept getting bigger and bigger, and i dont rlly understand what im doing anymore, so im calling it quite, maybe i shall come back to this bot one day when im a more expereienced programmer and fix everything, and refactor the code
+they shouldnt be to hard to fix for the ppl that know how, the only problem is im a novice coder, and this bot just kept getting bigger and bigger, and more stuff just kept being needed, ability to create substitutes, add/remove players/ ability for players to leave teams, ability to check teams mmr, ability to check substitutes mmr, check registered teams in the data basa, check players registred to teams in the database, and check the subs registered to the databasa, the list can go on forever, and i dont rlly understand what im doing anymore, so im calling it quite, maybe i shall come back to this bot one day when im a more expereienced programmer and fix everything, and refactor the code
