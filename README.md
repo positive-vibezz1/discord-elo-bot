@@ -8,6 +8,6 @@ the commands are
 - submit_scores: which prompts the users to enter the team names and team scores, and gives them the respecitve mmr 
 - register_sub: this is supposed to rigster a player into the database as a sub and give the sub role, idk if it works because it doesnt give the role, but it look like its adding users into the player base just fine 
 
-to run the bot download the zip, create a bot here [discord develepor portal]([https://pages.github.com/](https://discord.com/developers/applications)https://discord.com/developers/applications)
+to run the bot download the zip, create a bot here [discord develepor portal]([https://pages.github.com/](https://discord.com/developers/applications)https://discord.com/developers/applications/)
 
 
