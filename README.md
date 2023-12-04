@@ -21,3 +21,6 @@ there should be three variables you have to replace
 - vrml_elo_bot; which is at line 35 
 - create_team; which is at line 12 
 - ranking_class; which is at line 17 
+
+---
+##About the `register_sub and substitute files` they shouldnt be to hard to fix for the ppl that know how, the only problem is im a novice coder, and this bot just kept getting bigger and bigger, and i dont rlly understand what im doing anymore, so im calling it quite, maybe i shall come back to this bot one day when im a more expereienced programmer and fix everything, and refactor the code
