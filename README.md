@@ -8,7 +8,7 @@ the commands are
 - submit_scores: which prompts the users to enter the team names and team scores, and gives them the respecitve mmr 
 - register_sub: this is supposed to rigster a player into the database as a sub and give the sub role, idk if it works because it doesnt give the role, but it look like its adding users into the player base just fine.
 
-to run the bot download the zip, create a bot here [discord developer portal](https://discord.com/developers/applications/) and create your bot.
+to run the bot download the file, create a bot here [discord developer portal](https://discord.com/developers/applications/) and create your bot.
 then open the main file which is vrml_elo_bot, and replace 
 ***bot.run('BOT TOKEN')***
 with your bots token which can be found here
