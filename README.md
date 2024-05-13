@@ -19,9 +19,11 @@ with your bots token which can be found here
 then replace all the ***ranking_and_teams_channel = "replace with your desgnated channel"***
 - vrml_elo_bot at line 35
 - ranking_class at line 17
-- creat_team at line 12
+- creaet_team at line 12
+
 with the channel you want the bot to see the commands and reply to them(there may be more; if so when debugging the code it will throw an error to where the ***ranking_and_teams_channel = "replace with your desgnated channel"*** is located, i think)
 there should be three variables you have to replace
+
 - vrml_elo_bot; which is at line 35 
 - create_team; which is at line 12 
 - ranking_class; which is at line 17 
